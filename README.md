@@ -27,8 +27,8 @@ Tento repozitář je nastavený jako *read-only*. Pro možnost úprav si budete 
 ## 3. Nastavení jména a e-mailu v Gitu (první použití)
 Otevři terminál ve VS Code (**Ctrl+;**) a zadej:
 ```bash
-git config --global user.name "Tvé jméno"
-git config --global user.email "tvuj@email.cz"
+git config --global user.name "Tobias Böthig"
+git config --global user.email "t.bothigg@gmail.com"
 ```
 Jméno odpovídá názvu tvého účtu.
 
