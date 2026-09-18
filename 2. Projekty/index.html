@@ -3,9 +3,74 @@
     <head>
         <meta charset="UTF-8">
         <title>TESTOVACI WEB</title>
+        <style>
+            body {
+                background-color: #0c4240;
+                background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkufj_dzHh61I2Avf9rKn3MnIzGk7tWoNkUNSVWHX2Cg&s=10);
+                margin: auto;
+                padding: 30px 0;
+                color:rgb(212, 212, 212);
+                padding-top: 50px;
+                align-self: center;
+                max-width: 100%;
+                
+
+
+            }
+            .box{
+
+                background-color: #cc1f1f;
+                padding: 10px;
+                color:rgb(255, 255, 255);
+                border-color: aliceblue;
+                font-size: larger;
+                font-weight: 600;
+                text-align: center;
+                text-transform: capitalize;
+                background-image: url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAA0JCgsKCA0LCgsODg0PEyAVExISEyccHhcgLikxMC4pLSwzOko+MzZGNywtQFdBRkxOUlNSMj5aYVpQYEpRUk8BDg4OExETJhUVJk81LTVPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT//AABEIAIoA9gMBIgACEQEDEQH/xAAaAAADAQEBAQAAAAAAAAAAAAACAwQBAAUH/8QANxAAAgECBAQEAwcEAgMAAAAAAQIAAxEEEiExEyJBUTJCYXEFgZEUIzNSYqHBkrHw8XLRJEOC/8QAFAEBAAAAAAAAAAAAAAAAAAAAAP/EABQRAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwEAAhEDEQA/APmNp20O2ky0Dg1pxYHpBInQN0jsOVb7upsdoid1gUPSek1917zsK1q6+sOlV4qcNjZhsZrIrqWtZx20gNyjE0mBHONvSeeVKsQwsRLaS1F+8oniKRqOom1qS4hc6C1Qbg6QJKbKQUqeE7HtDylGCk67qw6xIAD2ce8bVptTAF81M7GBbiHZEp1hqOoPUH/UXVK1MOjUzmC79xOpNx8G1M6lRJgr0iHptANxf6RDLrKA61RoMrjoNjFMNYCxvPT+HuuIothqnXwzzIVN2p1A6mxGsDcRSajVam26mPwGLOHqa+A7yvHoMZg1xSDnUc1p5MD3MVRoVKRLXCHVXAvaJpYfEIn3eKRkA6GR4TGtR5H5qZ6HW0qGGpVzmw9QX7K38QAdSUemd21JMnQVOC6E8o2F+sor0atKmS73C9G3hYAM9B8gQudCT/ntAgDZayuO4M9M01q0SDoUOhnlOMpK9VNp6VN8tamb6VVsfeBlGy0udbkHw9pQtKjUTMEBvvJ6gKgW22MDC4g0q+RjyNp7QCrYKnfMl0+clNPh1lN7g9RPWcKWKsL9Z5rpkqvT1sLML/56wOqIpPKSJ00zoEgNptxBmi14HWnZY3LmtaFwmt0gTETI80z2MAob6A/KAANo6nWYCx1gGi4FyLD1gHQwK8PUyMwBt1Erp1QWvoJ5QJvGJVI6wKMdhj+NTHKd7TsG61UOHq7HaMw2IuDTbYxFelwagq0tUvv2gcgbB4uz3sf3jmQAMvY2lJVcbg8wHMv1ETVQmmzrqQNYCfh9mqtcDlG0DEKBWYCDg3yYtexNjKcStq1QkbH9oEJgx1ZLAERF4HqfCawzNRfVX6SLG0Dh8S6W0vp7RdOoabhl3E9bFhcVh6WIQAm2Uj1geNNVipupIMaKdOo1gcjdmmvhKqC5XSA2l8QqZeHXAq09rMP5hgcH7/CMSh0YHyyEow3Blfw9gXak3nECeoCzux95QDnwQdTzUjqPTvE1lKLlO5Y3PtBoVeG9yLqRZh3ED1gorUeXzC4nm11IbXcHWelgaiqBSJ9Ub8wg/EcOXXiKNt/WAqlic1Bah1ZRlMnrVM2JVj1XKYvDuEqZW8LaQsTuDbVdDAa28ycGzKCJ0CRkI6QYavbeEUDeGACuR1h8ZuwgmkwnCkYBcduyzOLUI0NvYWm8MDeaLDQCAvK7amdkPWUKhbvN4J9YEhFpksOHY/6izhmgJDEG8qo11YlK9yr6H09Yk0H6AwTSdd1MC7DM2AxfDc3R9j0PrLqlIJXJT8Oop0njcYtRCPrl8JO4nq/D64r0OATzqLqYHjNdKmnQz1Ky8aktRfPTI+Ynn4pcuJcbC8t+Gvnw7UzqUbMPbYwJ6dqtG3USV1KnWUAcHEEdAbQ6qLUPJaBFPR+HVC9Krhr6sMy+4kNRChsQRNoVDSrJUHlN4Ht1MNhqqrUddHG69DB4GHorlXXpdmhnXDuijNwzcDupk9AUqeuTOu9+tu8B5p0Hpa2zW00nmYin9lxVNl2NiJ6odWQrSQAd7SX4lTU4OnV1zK1vlAmqoa9VxoMlz9ZI6MhsRPVwS5kr1LanQSb4iyF1pqNQASflAnoVQBw6guhO/VT3E9KliitqWJIN/BUGzCeNKKNZQDSqjNTP7eogPx+GKMXQcp3t0i1HHp2Bs40945Kz4YZan3tA+E9oDKgbi4cXQ726fKAlWamSrC1p0ewD2ZrWmQJLThdTpNF5ug3MBi1rrYjm9p1j10iuIdgLQdTAazKuxuYHFbv9IOUjedaAXGqfmM4Vqg8zfWDlmWgPXF1l2Yx1P4gw0emG/aRhTlvbSYBrAvqfEL/h0lHvJ3xlZxYkAdgJZTo0quHGRQHGxikpLUDI6AOIEJJJ1jKVVqbhlJBEKvQNPUaqesRAux+WuiYpBbNyuOzReArCjiBmNlYZSe14FGpYMjao4sR/Yzmw7gZ0Gde4gZXWotQ8W+aLue8ppYsBQtZM47g6zqtXDW+7RmY99ICeKxGV+YevSLO+k4m52tOB6QPWwFcGmr3uyDKw7iMqUjSqXpk5WOamfXtPKw9U0agYdJ7KVKZp5H1pHVCOkBTZigqUiQfOg/iZWJr/AA91t4OaU01UG+cEdxCWmufNTZXU7i8CCjW4KU23C0y5Hck2E8+sz1KrVG8ROpl2KHCdswtoLDtaDQROEoYXZthAiylxyqT7CBLqzNSXNSbIF0UW39YqpbE0+IABVUcwHUd4A0apAKHVT0MDM1JyabERYNtYba6iBRTxa250N/0zZHOgGT0E1aZbWcotHIdoAZMvS8wo6+Ux5btOWprzOICbFhtAItLQQ1gdu8ypQVtRvAkABnMABGtQKneKqAgawH0kvhL/AKpKfEZZSP8A4R9DeRHxQKaFc0xtpLaNSlUJJAuRaeYp0m+E3BtAuqh6CkMM6Hr3Ekq4ccPjUOan1HVY2ji3TQ86HdTBNUUq+fDjKD5TqPaBMFOXONhHUarIQyGx7RjU0r60CKbndDsfaLFOkpOfEAHsqE/9QHVKdLEDMLJU/YxTUkokZyS3a04fZV2q1r/8RGithyuWpUdh+pNoE1TXyWipTUCkHh1FI7E2P7xDIy7iAINo/D4mpQN1N1O6nUSebA9RMTh6p1z0j+wlNOlTYXzBx3U6zwwYa1CpupIPoYHt8Cm2zXt0aCq4ejUzZQCOonmjGViuRnJEMG6b3gMVftGIaowBUHaTMhWscnJVQ7Dr7RmtJRUAOhjqwpYulxKL2rIPDsT7QJDTXEXNOy1PMh6+0TqhKuCO/pKC1N6YdrpVHmHX3EYw4y3ZVqD8ynUQIys6Paiq6pVtf8wP8ToA2E7aBmgk+sAyx2vAvOAJMPhm4BOpgMoPZspOm4lDtYgjaQi6VLGU1CSqGAVRub1k9WUqpy5z8pLW3gPpEDCv66SQ/wBpTQYC4bYzmoCxtvuPWBMIV+80qRoRrBteBoacWvA2nQGKxGx1jlqUW1rUlLHza/wZLOuYF608O40FIDvmYRdWhQXw1rDsNZMGvNBF9YHMqjwveCCYwol9Kl79lgshUjsRcQBNplpp0nAwMnTbX1mEWMDrwlqMDvBnQLKOIVlKubX77RDhVa6MPcRU6AStuDrecrMhupI9oMyBWtYuOdgfedJZ0AtYa0idTDUKvvNJHU2gaLDQCaoAa7ERLVeiiBck6wCrX4lzHI4ZAp6RJ51/UNoKmB6JI+zlhIiQU13mrUstr8p6TfuToQwPoYBUKiKoDiO4lMjkYXBvaT8Gm21a3/ITfsVS/K9M+uaAbMAdViXKgabmGcNiANLN7EGL4Tqeeyn9UDuEzLmA3i9VNiI8Ujf8ZT7NNfDsRdQWPowMBahG0LARxwtiM2l+20lIKmzCx9ZRhsS1PkcZ0O4MDPsjk77TqeHZ3Kty2lisjWNJs36WNiIzrchgfVYHnPSamT7wyoq4YFd0NpXVUOLBd5G1QUwVXXXWAgi4gwy1ze0EwNU2hEZgbb9IuGjZWDb2gBMjalOzEKLjce0DS2ogZOhACaUB8P06wMDL1EPJTbwvb0YRYJENSjaNynuNoGnDv0sfadMZXTY3B2IM6BxqW8MAknUzgRfw3hfdnqywBCk7TmRl3E0rbzAj0mXtsTA1WtCbKeYaekC57zhcdIG6naEAR1EzKxmFbeYQC5+4hcOrvdf6hFfO8wbwHrTcnWog92hnjgctQOO2a/8AeTdZtv8ADA2oGDcylflaYGYbGGC6oOY5e15pSwzqLi2ogdxS65WOYeo1i2FtRtNPcbQqYzEgwBVrmxNpQvGK/iFV76kGSsCptGUazU2upsYDvs1RrZquh73hph6SAlmzW3PSb9pFr5BfrfWK58VVtfQfQQAfhseXSKK2a2956BwdNV1Fz3k1ekFFl0gTmcJpgwHglqIYeJNPlNJdhenb1EHDsOJlPhYWgG6VCOsDmRweZTf2mqhbY6zhUqAjmOkzMTAwkN49+8wgiMK50zdQbExeqwODMBoZ0647TIB2TuZ10/Lf3MHpMgHxF6Iv0m8W2yp/TFToDeM3ZfpOFRz+X6QRtO6QGii76lhBaiEOt7TaJObeUNqpvAm4VxykTMmpHUTU3m+dfeAOS9+8NAroR1GoM1fxoGzm35oGgXpkddxGYVlbkb5GCfGfaLGjNaA6tSsT339xF0TzXlG9LWS0t4HOMxLRe007zDAMG8qWg4pjK2W8iErDEotyYCmapTa2cn5zi7PbMdjAfxmcIGN/MEwj194JgcO/aUNZ3Rz5t/eTR3k/+/4gZ4Wa42nAi5BjK26/KBiNH0gFh9XZL6ETMoLFW6QKf4gh/wDs+cBTCxtMh1fxDOgf/9k=);
+                
+            }
+           
+            hr{
+                background-color: #cc1f1f;
+                height: 10px;
+                color: #cc1f1f;
+                padding-top: 5px;
+            }
+           p.uvod{
+            color: black;
+            text-align: center;
+            font-weight: 600;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+
+
+           }
+           .druhy{
+            background-color: #cc1f1f;
+                height: 10px;
+                color: #cc1f1f;
+                padding-top: 5px;
+           }
+           .odkaz{
+            color: black;
+            font-weight: 900;
+
+
+
+           }
+
+
+
+
+        </style>
     </head>
     <body>
-        <p>Web</p>
-        <p>Web</p>
+        
+        <div class="box">Vitej na webu</div>
+        <div class="strom" alt="strom"></div>
+         <hr>
+         <p class="uvod">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.</p>
+         <hr class="druhy">
+         <p class="odkaz"><a href="https://github.com/Tobanikov/kb3_prog">Muj GitHub</p>
     </body>
 </html>
