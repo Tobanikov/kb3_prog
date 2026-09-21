@@ -51,13 +51,51 @@
                 color: #cc1f1f;
                 padding-top: 5px;
            }
-           .odkaz{
-            color: black;
-            font-weight: 900;
-
-
-
+           .strom{
+            position: absolute;
+            background-color: #0c4240;
+            float: left;
+            padding: 30px;
+            border-radius: 60px;
+            margin-left: 200px;
+            padding-left: 100px;
+            padding-right: 100px;
+            
            }
+           
+
+           .tlacitko {
+            
+  background-color: #4f46e5;
+  display: inline-block;
+  color: white;
+  font-size: large;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 1s;
+  text-align: center;
+  border-radius: 10;
+  margin-top: 50px;
+  position: static;
+}
+
+.tlacitko:hover {
+  background-color: #ca1c1c;
+  transform: scale(4);
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%2Fid%2FOIP.BuqTpBQWGDSUpYXHR0KXJQHaEK%3Fr%3D0%26pid%3DApi&f=1&ipt=6b166b4260510fa8940fff742bf879d26f184a8d2c388e57301ac4efdae211d2&ipo=images);
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  
+
+ }
+.tlacitko:active {
+  transform: scale(2);
+}
 
 
 
@@ -67,10 +105,13 @@
     <body>
         
         <div class="box">Vitej na webu</div>
-        <div class="strom" alt="strom"></div>
+        
          <hr>
          <p class="uvod">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since 1966, when designers at Letraset and James Mosley, the librarian at St Bride Printing Library in London, took a 1914 Cicero translation and scrambled it to make dummy text for Letraset's Body Type sheets. It has survived not only many decades, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised thanks to these sheets and more recently with desktop publishing software like Aldus PageMaker and Microsoft Word including versions of Lorem Ipsum.</p>
          <hr class="druhy">
-         <p class="odkaz"><a href="https://github.com/Tobanikov/kb3_prog">Muj GitHub</p>
-    </body>
+         
+         <div class="strom" alt="strom"></div>
+            <div style="text-align: center;" alt="tlacitko"><a href="https://github.com/Tobanikov/kb3_prog"><button class="tlacitko">GITHUB</button></a></div>
+            
+        </body>
 </html>
