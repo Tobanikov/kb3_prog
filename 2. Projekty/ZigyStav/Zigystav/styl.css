@@ -1,0 +1,763 @@
+/* ===== ZigyStav – společný styl pro všechny stránky ===== */
+
+:root{
+    --modra: #1d1b4d;
+    --modra-tmava: #12112f;
+    --oranzova: #e4922a;
+    --oranzova-svetla: #f5b25c;
+    --pozadi: #f7f6f2;
+    --bila: #ffffff;
+    --text: #2b2a3d;
+    --text-sedy: #6b6a7d;
+    --okraj: #e6e4dc;
+    --stin: 0 10px 30px rgba(29, 27, 77, 0.08);
+    --stin-velky: 0 20px 50px rgba(29, 27, 77, 0.15);
+    --zaobleni: 18px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    background-color: var(--pozadi);
+    color: var(--text);
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+a{
+    color: inherit;
+}
+
+h1, h2, h3{
+    font-family: "Space Grotesk", "Inter", Arial, sans-serif;
+    color: var(--modra);
+    line-height: 1.15;
+    margin: 0 0 16px;
+}
+
+.obal{
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ===== Hlavička a navigace ===== */
+
+.hlavicka{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--okraj);
+}
+
+.hlavicka .obal{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+}
+
+.znacka{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-family: "Space Grotesk", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--modra);
+}
+
+.znacka img{
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.znacka span{
+    color: var(--oranzova);
+}
+
+.navigace{
+    display: flex;
+    gap: 6px;
+}
+
+.navigace a{
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--modra);
+    padding: 10px 16px;
+    border-radius: 999px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.navigace a:hover{
+    background-color: rgba(228, 146, 42, 0.12);
+    color: var(--oranzova);
+}
+
+.navigace a.aktivni{
+    background-color: var(--modra);
+    color: var(--bila);
+}
+
+/* hamburger pro mobil (bez JavaScriptu) */
+.menu-prepinac{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu-prepinac:focus-visible + .menu-ikona{
+    outline: 2px solid var(--oranzova);
+    outline-offset: 2px;
+}
+
+.menu-ikona{
+    display: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-ikona span,
+.menu-ikona span::before,
+.menu-ikona span::after{
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--modra);
+    border-radius: 2px;
+    position: relative;
+    transition: transform 0.25s;
+}
+
+.menu-ikona span::before,
+.menu-ikona span::after{
+    content: "";
+    position: absolute;
+}
+
+.menu-ikona span::before{ top: -7px; }
+.menu-ikona span::after{ top: 7px; }
+
+/* ===== Tlačítka ===== */
+
+.tlacitko{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background: var(--oranzova);
+    color: var(--bila);
+    box-shadow: 0 8px 20px rgba(228, 146, 42, 0.35);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+}
+
+.tlacitko:hover{
+    transform: translateY(-2px);
+    background: var(--oranzova-svetla);
+    box-shadow: 0 12px 28px rgba(228, 146, 42, 0.45);
+}
+
+.tlacitko.obrys{
+    background: transparent;
+    color: var(--bila);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    box-shadow: none;
+}
+
+.tlacitko.obrys:hover{
+    background: var(--bila);
+    color: var(--modra);
+}
+
+/* ===== Hero (úvodní velký blok) ===== */
+
+.hero{
+    position: relative;
+    color: var(--bila);
+    background:
+        linear-gradient(110deg, rgba(18, 17, 47, 0.95) 0%, rgba(29, 27, 77, 0.85) 45%, rgba(29, 27, 77, 0.35) 100%),
+        url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3qGvxhhg6d1OEtdD5axqUMujc6NuCUxMGrwmcjhCM4w&s=10") center / cover;
+    padding: 130px 0 150px;
+    overflow: hidden;
+}
+
+.hero::after{
+    content: "";
+    position: absolute;
+    right: -120px;
+    bottom: -120px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(228, 146, 42, 0.45), transparent 70%);
+}
+
+.hero .obal{
+    position: relative;
+    z-index: 1;
+}
+
+.stitek{
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--oranzova);
+    background: rgba(228, 146, 42, 0.12);
+    padding: 6px 14px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+}
+
+.hero h1{
+    color: var(--bila);
+    font-size: clamp(40px, 6vw, 68px);
+    max-width: 720px;
+}
+
+.hero h1 span{
+    color: var(--oranzova);
+}
+
+.hero p{
+    font-size: 19px;
+    max-width: 560px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 36px;
+}
+
+.hero-tlacitka{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* menší hero pro podstránky */
+.hero.mala{
+    padding: 80px 0 90px;
+    background: linear-gradient(120deg, var(--modra-tmava), var(--modra));
+}
+
+.hero.mala h1{
+    font-size: clamp(36px, 5vw, 54px);
+}
+
+/* ===== Statistiky ===== */
+
+.statistiky{
+    margin-top: -60px;
+    position: relative;
+    z-index: 2;
+}
+
+.statistiky .mrizka{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0;
+    background: var(--bila);
+    border-radius: var(--zaobleni);
+    box-shadow: var(--stin-velky);
+    overflow: hidden;
+}
+
+.statistika{
+    padding: 32px 28px;
+    border-right: 1px solid var(--okraj);
+}
+
+.statistika:last-child{
+    border-right: none;
+}
+
+.statistika strong{
+    display: block;
+    font-family: "Space Grotesk", Arial, sans-serif;
+    font-size: 40px;
+    color: var(--modra);
+    line-height: 1.1;
+}
+
+.statistika span{
+    color: var(--text-sedy);
+    font-size: 15px;
+}
+
+/* ===== Sekce ===== */
+
+.sekce{
+    padding: 100px 0;
+}
+
+.sekce.bila{
+    background: var(--bila);
+}
+
+.nadpis-sekce{
+    max-width: 640px;
+    margin-bottom: 50px;
+}
+
+.nadpis-sekce h2{
+    font-size: clamp(30px, 4vw, 42px);
+}
+
+.nadpis-sekce p{
+    color: var(--text-sedy);
+    margin: 0;
+}
+
+.dva-sloupce{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.dva-sloupce p{
+    color: var(--text-sedy);
+}
+
+.foto{
+    position: relative;
+    isolation: isolate;
+}
+
+.foto img{
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--zaobleni);
+    box-shadow: var(--stin-velky);
+}
+
+.foto::before{
+    content: "";
+    position: absolute;
+    inset: 24px -24px -24px 24px;
+    border: 3px solid var(--oranzova);
+    border-radius: var(--zaobleni);
+    z-index: -1;
+}
+
+/* ===== Karty (služby, reference) ===== */
+
+.karty{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+}
+
+.karta{
+    background: var(--bila);
+    border: 1px solid var(--okraj);
+    border-radius: var(--zaobleni);
+    padding: 32px;
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.karta:hover{
+    transform: translateY(-6px);
+    box-shadow: var(--stin-velky);
+    border-color: transparent;
+}
+
+.karta .ikona{
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    background: linear-gradient(135deg, var(--oranzova), var(--oranzova-svetla));
+    margin-bottom: 22px;
+}
+
+.karta h3{
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.karta p{
+    color: var(--text-sedy);
+    margin: 0;
+    font-size: 16px;
+}
+
+.karta.s-obrazkem{
+    padding: 0;
+    overflow: hidden;
+}
+
+.karta.s-obrazkem img{
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+}
+
+.karta.s-obrazkem .obsah{
+    padding: 26px 28px 30px;
+}
+
+.karta .rok{
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--oranzova);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+/* ===== Výzva k akci ===== */
+
+.vyzva{
+    background: linear-gradient(120deg, var(--oranzova), #d9771a);
+    border-radius: 28px;
+    padding: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    color: var(--bila);
+    box-shadow: 0 20px 50px rgba(228, 146, 42, 0.35);
+}
+
+.vyzva h2{
+    color: var(--bila);
+    margin: 0 0 6px;
+    font-size: clamp(26px, 3.5vw, 36px);
+}
+
+.vyzva p{
+    margin: 0;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.vyzva .tlacitko{
+    background: var(--modra);
+    box-shadow: none;
+}
+
+.vyzva .tlacitko:hover{
+    background: var(--modra-tmava);
+}
+
+/* ===== Kontakt ===== */
+
+.kontakt-mrizka{
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 32px;
+}
+
+.kontakt-info{
+    background: var(--modra);
+    color: var(--bila);
+    border-radius: var(--zaobleni);
+    padding: 40px;
+}
+
+.kontakt-info h3{
+    color: var(--bila);
+}
+
+.kontakt-polozka{
+    display: flex;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.kontakt-polozka:last-child{
+    border-bottom: none;
+}
+
+.kontakt-polozka .ikona{
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(228, 146, 42, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.kontakt-polozka small{
+    display: block;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 13px;
+}
+
+.formular{
+    background: var(--bila);
+    border-radius: var(--zaobleni);
+    padding: 40px;
+    box-shadow: var(--stin);
+    display: grid;
+    gap: 16px;
+}
+
+.formular label{
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--modra);
+    display: grid;
+    gap: 6px;
+}
+
+.formular input,
+.formular textarea{
+    font: inherit;
+    font-size: 16px;
+    padding: 14px 16px;
+    border: 1px solid var(--okraj);
+    border-radius: 12px;
+    background: var(--pozadi);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.formular input:focus,
+.formular textarea:focus{
+    outline: none;
+    border-color: var(--oranzova);
+    box-shadow: 0 0 0 4px rgba(228, 146, 42, 0.15);
+}
+
+.formular button{
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    justify-self: start;
+}
+
+/* ===== 3D model domu ===== */
+
+.model-scena{
+    position: relative;
+    height: min(70vh, 620px);
+    min-height: 360px;
+    border-radius: var(--zaobleni);
+    overflow: hidden;
+    box-shadow: var(--stin-velky);
+    background: linear-gradient(#bfe3ff, #e8f4ff);
+    cursor: grab;
+    touch-action: none;
+}
+
+.model-scena:active{
+    cursor: grabbing;
+}
+
+.model-scena canvas{
+    display: block;
+}
+
+.model-chyba{
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    color: var(--modra);
+    font-weight: 600;
+}
+
+.model-chyba[hidden]{
+    display: none;
+}
+
+.model-ovladani{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.tlacitko.svetle{
+    background: var(--bila);
+    color: var(--modra);
+    border: 1px solid var(--okraj);
+    box-shadow: var(--stin);
+}
+
+.tlacitko.svetle:hover{
+    background: var(--modra);
+    color: var(--bila);
+}
+
+.model-napoveda{
+    color: var(--text-sedy);
+    font-size: 15px;
+    margin: 18px 0 0;
+}
+
+/* ===== Patička ===== */
+
+.paticka{
+    background: var(--modra-tmava);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 60px 0 30px;
+    margin-top: 100px;
+}
+
+.paticka .obal{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.paticka .znacka{
+    color: var(--bila);
+}
+
+.paticka nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.paticka nav a{
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.paticka nav a:hover{
+    color: var(--oranzova);
+}
+
+.copyright{
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 24px;
+    font-size: 14px;
+}
+
+/* ===== Animace při načtení ===== */
+
+@keyframes vyjet{
+    from{ opacity: 0; transform: translateY(24px); }
+    to{ opacity: 1; transform: none; }
+}
+
+.hero .obal > *{
+    animation: vyjet 0.7s ease both;
+}
+
+.hero .obal > *:nth-child(2){ animation-delay: 0.1s; }
+.hero .obal > *:nth-child(3){ animation-delay: 0.2s; }
+.hero .obal > *:nth-child(4){ animation-delay: 0.3s; }
+
+/* ===== Mobil ===== */
+
+@media (max-width: 960px){
+    .menu-ikona{
+        display: flex;
+    }
+
+    .navigace{
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--bila);
+        padding: 12px 24px 24px;
+        border-bottom: 1px solid var(--okraj);
+        box-shadow: var(--stin);
+        display: none;
+    }
+
+    .menu-prepinac:checked ~ .navigace{
+        display: flex;
+    }
+
+    .menu-prepinac:checked + .menu-ikona span{
+        background: transparent;
+    }
+
+    .menu-prepinac:checked + .menu-ikona span::before{
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-prepinac:checked + .menu-ikona span::after{
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 860px){
+    .dva-sloupce,
+    .kontakt-mrizka{
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .statistika{
+        border-right: none;
+        border-bottom: 1px solid var(--okraj);
+    }
+
+    .statistika:last-child{
+        border-bottom: none;
+    }
+
+    .sekce{
+        padding: 70px 0;
+    }
+
+    .vyzva{
+        padding: 40px 28px;
+    }
+
+    .foto::before{
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    *{
+        animation: none !important;
+        transition: none !important;
+    }
+    html{
+        scroll-behavior: auto;
+    }
+}

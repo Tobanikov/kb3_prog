@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt – ZigyStav</title>
+    <link rel="icon" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header class="hlavicka">
+        <div class="obal">
+            <a href="index.html" class="znacka">
+                <img src="logo.png" alt="Logo ZigyStav">
+                Zigy<span>Stav</span>
+            </a>
+            <input type="checkbox" id="menu" class="menu-prepinac">
+            <label for="menu" class="menu-ikona" aria-label="Otevřít menu"><span></span></label>
+            <nav class="navigace">
+                <a href="index.html">Domů</a>
+                <a href="onas.html">O nás</a>
+                <a href="sluzby.html">Naše služby</a>
+                <a href="reference.html">Reference</a>
+                <a href="model.html">Model domu</a>
+                <a href="kontakt.html" class="aktivni">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero mala">
+        <div class="obal">
+            <span class="stitek">Kontakt</span>
+            <h1>Ozvěte se nám</h1>
+            <p>Rádi s vámi probereme váš projekt.</p>
+        </div>
+    </section>
+
+    <section class="sekce">
+        <div class="obal kontakt-mrizka">
+            <div class="kontakt-info">
+                <h3>Zigy STAV Brno a.s.</h3>
+                <div class="kontakt-polozka">
+                    <div class="ikona">📍</div>
+                    <div><small>Adresa</small>(doplnit)</div>
+                </div>
+                <div class="kontakt-polozka">
+                    <div class="ikona">📞</div>
+                    <div><small>Telefon</small>(doplnit)</div>
+                </div>
+                <div class="kontakt-polozka">
+                    <div class="ikona">✉️</div>
+                    <div><small>E-mail</small>(doplnit)</div>
+                </div>
+            </div>
+            <form class="formular" action="#">
+                <h3>Napište nám</h3>
+                <label>Jméno
+                    <input type="text" name="jmeno" required placeholder="Jan Novák">
+                </label>
+                <label>E-mail
+                    <input type="email" name="email" required placeholder="jan@email.cz">
+                </label>
+                <label>Zpráva
+                    <textarea name="zprava" required rows="5" placeholder="Popište nám svůj projekt…"></textarea>
+                </label>
+                <button type="submit" class="tlacitko">Odeslat zprávu</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="paticka">
+        <div class="obal">
+            <a href="index.html" class="znacka">
+                <img src="logo.png" alt="Logo ZigyStav">
+                Zigy<span>Stav</span>
+            </a>
+            <nav>
+                <a href="index.html">Domů</a>
+                <a href="onas.html">O nás</a>
+                <a href="sluzby.html">Naše služby</a>
+                <a href="reference.html">Reference</a>
+                <a href="model.html">Model domu</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+            <div class="copyright">© 2026 Zigy STAV Brno a.s. · Stavíme od roku 1997</div>
+        </div>
+    </footer>
+</body>
+</html>
